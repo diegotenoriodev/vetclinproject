@@ -1,0 +1,11 @@
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\bin\Debug\VeterinarianClinic.Model.dll
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\bin\Debug\VeterinarianClinic.Model.pdb
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\bin\Debug\VeterinarianClinic.DataBase.dll
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\bin\Debug\VeterinarianClinic.Domain.dll
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\bin\Debug\VeterinarianClinic.DataBase.pdb
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\bin\Debug\VeterinarianClinic.DataBase.dll.config
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\bin\Debug\VeterinarianClinic.Domain.pdb
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\obj\Debug\VeterinarianClinic.Model.csprojResolveAssemblyReference.cache
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\obj\Debug\VeterinarianClinic.Model.csproj.CoreCompileInputs.cache
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\obj\Debug\VeterinarianClinic.Model.dll
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.Model\obj\Debug\VeterinarianClinic.Model.pdb

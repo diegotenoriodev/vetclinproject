@@ -1,0 +1,20 @@
+﻿VeterinarianClinic.View
+
+
+winexe
+C#
+.cs
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.View\obj\Debug\
+VeterinarianClinic.View
+none
+false
+DEBUG;TRACE
+C:\Conestoga Project TFS\MSD - Software Dev - Veterinarian Clinic\VeterinarianClinic\VeterinarianClinic.View\App.xaml
+16-431741668
+
+41-1183906435
+161965210162
+MainWindow.xaml;UserControls\LoginControl.xaml;UserControls\Menu.xaml;UserControls\Top.xaml;Views\AddressEditor.xaml;Views\AddressGridViewer.xaml;Views\AppointmentEditor.xaml;Views\AppointmentGridViewer.xaml;Views\ClientEditor.xaml;Views\ClientGridViewer.xaml;Views\DoctorEditor.xaml;Views\DoctorGridViewer.xaml;Views\PetEditor.xaml;Views\PetGridViewer.xaml;Views\UserEditor.xaml;Views\UserGridViewer.xaml;
+
+True
+

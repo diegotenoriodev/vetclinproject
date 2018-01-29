@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="VeterinarianClinic.View.UserControls.Top"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VeterinarianClinic.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="800">
+    <Grid>
+        <Label x:Name="lblTitle" Content="Label" VerticalAlignment="Top" Foreground="#FF5078BF" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="MS Reference Sans Serif" FontSize="24"/>
+        <Button x:Name="btnSearch" Content="Search" Margin="0,96,10,0" FontWeight="Bold" FontSize="16" Background="#FF33F12A" BorderBrush="#FF5BCD55" Foreground="White" Click="btnSearch_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150"/>
+        <TextBox x:Name="txtSearch" Margin="0,96,165,0" TextWrapping="Wrap" FontSize="16" Padding="2,0,0,0" KeyDown="txtSearch_KeyDown" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="243"/>
+        <Button x:Name="btnNew" Content="New" HorizontalAlignment="Left" Width="126" Margin="0,95,0,25" Foreground="White" BorderBrush="#FF5078BF" Background="#FF5078BF" FontSize="16" FontFamily="MS Reference Sans Serif" Padding="1,3" FontWeight="Bold" Click="btnNew_Click"/>
+        <Label Name="lblMessage" HorizontalContentAlignment="Center" Content="" Margin="10,126,10,0"/>
+
+    </Grid>
+</UserControl>

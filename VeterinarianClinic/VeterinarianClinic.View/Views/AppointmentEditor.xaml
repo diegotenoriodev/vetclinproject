@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="VeterinarianClinic.View.Views.AppointmentEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VeterinarianClinic.View.Views"
+             mc:Ignorable="d" Background="White"
+             xmlns:local2="clr-namespace:VeterinarianClinic.View.ValidationRules" 
+             xmlns:local3="clr-namespace:VeterinarianClinic.View.Converter" 
+             xmlns:UserControls="clr-namespace:VeterinarianClinic.View.UserControls"
+             d:DesignHeight="670" d:DesignWidth="450" Loaded="AppointmentControl_Loaded">
+    <UserControl.Resources>
+        <local3:AddressConverter x:Key="AddressConverter"/>
+    </UserControl.Resources>
+    <Grid x:Name="fieldsGrid" Margin="0,0,0,0">
+        <Grid.Resources>
+            <Style TargetType="ComboBox">
+                <Setter Property="DisplayMemberPath" Value="Name"/>
+                <Setter Property="SelectedValuePath" Value="Id"/>
+            </Style>
+        </Grid.Resources>
+        <Border BorderBrush="Black" BorderThickness="1" >
+
+        </Border>
+        <Label Content="Appointment" x:Name="lblTitle" Margin="167,10,166,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+
+        <Label Content="Client" x:Name="lblClient" Margin="40
+               ,63,0,0" VerticalAlignment="Top" FontSize="16" Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Right" RenderTransformOrigin="-0.445,0.548"/>
+        <ComboBox x:Name="cbxClient" Margin="154,63,65,0" Height="30" VerticalAlignment="Top" FontSize="16" SelectionChanged="ClientValueChanged">
+            <ComboBox.SelectedItem>
+                <Binding Path="Client" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please select a client for the appointment"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+
+        <Label Content="Pet" x:Name="lblPet" HorizontalAlignment="Left" Margin="40,113,0,0" VerticalAlignment="Top" FontSize="16" Width="100" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="cbxPet" Margin="154,113,65,0" Height="30" VerticalAlignment="Top" FontSize="16">
+            <ComboBox.SelectedItem>
+                <Binding Path="Pet" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please select a pet for the appointment"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+
+        <Label Content="Doctor" x:Name="lblDoctor" HorizontalAlignment="Left" Margin="40,163,0,0" VerticalAlignment="Top" FontSize="16" Width="100" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="cbxDoctor" Margin="154,163,65,0" Height="30" VerticalAlignment="Top" FontSize="16" SelectionChanged="UpdateTimeItemSource">
+            <ComboBox.SelectedItem>
+                <Binding Path="Doctor" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please select a doctor for the appointment"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+
+        <Label Content="Type" x:Name="lblType" HorizontalAlignment="Left" Margin="40,213,0,0" VerticalAlignment="Top" FontSize="16" Width="100" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="cbxAppointmentType" Margin="154,213,65,0" Height="30" VerticalAlignment="Top" FontSize="16">
+            <ComboBox.SelectedItem>
+                <Binding Path="AppointmentType" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please select a type for the appointment"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+
+        <Label Content="Date" x:Name="lblDate" HorizontalAlignment="Left" Margin="40,349,0,0" VerticalAlignment="Top" FontSize="16" Width="100" HorizontalContentAlignment="Right"/>
+        <DatePicker x:Name="dtpckrDate" Margin="154,349,65,0" RenderTransformOrigin="0.499,0.338" MinHeight="30" VerticalAlignment="Top" SelectedDateChanged="UpdateTimeItemSource">
+            <DatePicker.SelectedDate>
+                <Binding Path="DateTimeOfAppointment" NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please select a date for the appointment"/>
+                        <local2:MinDateValue ErrorMessage="Appointment day cannot before tomorow"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </DatePicker.SelectedDate>
+        </DatePicker>
+        <Label Content="Address" x:Name="lblAddress" HorizontalAlignment="Left" Margin="40,263,0,0" VerticalAlignment="Top" FontSize="16" Width="100" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="cbxAddress" Margin="154,263,65,0" Height="30" VerticalAlignment="Top" FontSize="16">
+            <ComboBox.SelectedItem>
+                <Binding Path="Address" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please select an address for the appointment"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+        <Label Margin="154,300,15,0" Content="{Binding Path=Address, 
+                        Converter={StaticResource AddressConverter}}" Height="44" VerticalAlignment="Top" FontSize="10" >
+        </Label>
+
+        <UserControls:ButtonSave HorizontalAlignment="Left" Margin="65,450,0,0" VerticalAlignment="Top" Width="150" Click="ButtonSave_Click"/>
+        <UserControls:ButtonCancel HorizontalAlignment="Right" Margin="0,450,65,0" VerticalAlignment="Top" Width="150" Click="ButtonCancel_Click"/>
+        <Label x:Name="lblErrors" Content="" Margin="23,497,15,0" Height="163" VerticalAlignment="Top" Foreground="#FFFD4444"/>
+        <Label Content="Time" x:Name="lblTime" HorizontalAlignment="Left" Margin="40,399,0,0" VerticalAlignment="Top" FontSize="16" Width="100" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="cbxTime" SelectedValuePath="" DisplayMemberPath="" Margin="154,399,65,0" Height="30" VerticalAlignment="Top" FontSize="16">
+            <ComboBox.SelectedItem>
+                <Binding Path="Time" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please select a time for the appointment"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+    </Grid>
+</UserControl>

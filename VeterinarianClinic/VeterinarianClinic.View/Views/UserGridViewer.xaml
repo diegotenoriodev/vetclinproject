@@ -1,0 +1,29 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VeterinarianClinic.View.Views"
+             xmlns:UserControls="clr-namespace:VeterinarianClinic.View.UserControls" x:Class="VeterinarianClinic.View.Views.UserGridViewer"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <UserControls:Top x:Name="top" Grid.Row="0" Title="Users"
+            NewToolTip="Click here to add a new user"
+            SearchToolTip="Search by name and user type (admin or employee)" Height="154" 
+            VerticalAlignment="Top" />
+        <UserControls:BasicGrid x:Name="userGrid" ItemsSource="{Binding Path=Users}" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="Id" HeaderStringFormat="Id" IsReadOnly="True" SortDirection="Ascending" SortMemberPath="Id" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Name}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="Name" HeaderStringFormat="Company" IsReadOnly="True" SortDirection="Ascending" SortMemberPath="Name" Width="300"/>
+                <DataGridTextColumn Binding="{Binding Username}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="User Name" IsReadOnly="True" SortDirection="Ascending" SortMemberPath="Username" Width="200"/>
+                <DataGridTextColumn Binding="{Binding UserType.Name}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="User Type" IsReadOnly="True" SortDirection="Ascending" SortMemberPath="UserType.Name" Width="200"/>
+            </DataGrid.Columns>
+        </UserControls:BasicGrid>
+        <local:UserEditor Visibility="Hidden"  x:Name="userEditor" Width="450" Margin="176,47,174,113" Grid.RowSpan="2" />
+    </Grid>
+</UserControl>

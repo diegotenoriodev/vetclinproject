@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="VeterinarianClinic.View.UserControls.LoginControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VeterinarianClinic.View.UserControls"
+             xmlns:local2="clr-namespace:VeterinarianClinic.View.ValidationRules"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Name="gridLogin">
+        <Grid.Background>
+            <ImageBrush ImageSource="/VeterinarianClinic.View;component/Images/loginImage.png"/>
+        </Grid.Background>
+        <Label Content="Username" Name="lblUsername" HorizontalAlignment="Left" Margin="265,227,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        <TextBox TabIndex="0" KeyDown="txtUserName_KeyDown" HorizontalAlignment="Left" Name="txtUserName" Height="28" Margin="368,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" FontSize="16">
+            <TextBox.Text>
+                <Binding Path="Username" NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please inform the username"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label Content="Password" Name="lblPassword" HorizontalAlignment="Left" Margin="270,285,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        <PasswordBox TabIndex="1" KeyDown="txtUserName_KeyDown" HorizontalAlignment="Left" Name="txtPassword" Height="28" Margin="368,289,0,0" VerticalAlignment="Top" Width="166" FontSize="16" RenderTransformOrigin="0.794,0.655">
+        </PasswordBox>
+        <Button Name="btnLogin" TabIndex="2" Content="Login" HorizontalAlignment="Left" Margin="265,356,0,0" VerticalAlignment="Top" Width="269" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="#FFFDFDFD" Background="#FF5078BF" Height="37" Click="Button_Click"/>
+        <Label Name="lblError" HorizontalAlignment="Left" Margin="265,424,0,0" VerticalAlignment="Top" Width="269" Foreground="#FFF1F1F1" FontSize="14" Height="70"/>
+
+    </Grid>
+</UserControl>

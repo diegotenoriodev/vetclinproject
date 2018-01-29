@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="VeterinarianClinic.View.Views.PetEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:VeterinarianClinic.View.Views"
+             xmlns:UserControls="clr-namespace:VeterinarianClinic.View.UserControls"
+             xmlns:local2="clr-namespace:VeterinarianClinic.View.ValidationRules" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" Background="White"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="450">
+    <Grid Name="fieldsGrid">
+        <Grid.Resources>
+            <Style TargetType="ComboBox">
+                <Setter Property="DisplayMemberPath" Value="Name"/>
+                <Setter Property="SelectedValuePath" Value="Id"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="357*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1"/>
+        <UserControls:ButtonSave TabIndex="5" HorizontalAlignment="Left" Margin="64,296,0,0" VerticalAlignment="Top" Width="150" Click="ButtonSave_Click"/>
+        <UserControls:ButtonCancel TabIndex="6" HorizontalAlignment="Right" Margin="0,296,64,0" VerticalAlignment="Top" Width="150" Click="ButtonCancel_Click"/>
+        <Label Content="Name" x:Name="lblName" HorizontalAlignment="Left" Margin="73,102,0,0" VerticalAlignment="Top" FontSize="16" Width="116" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="txtName" TabIndex="1"  Margin="204,101,24,0" Height="30" VerticalAlignment="Top" FontSize="16">
+            <TextBox.Text>
+                <Binding Path="Name" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please inform the name for the pet"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label Content="Owner" x:Name="lblType" HorizontalAlignment="Left" Margin="61,59,0,0" VerticalAlignment="Top" FontSize="16" Width="128" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="cbxOwner" TabIndex="0"  Margin="204,59,24,0" Height="30" VerticalAlignment="Top" FontSize="16">
+            <ComboBox.SelectedItem>
+                <Binding Path="Owner" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please select the owner"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+        <Label x:Name="lblErrors" Content="" Margin="32,332,24,0" Foreground="#FFFD4444" Height="102" VerticalAlignment="Top"/>
+        <Label Content="Pet" x:Name="lblTitle" Margin="206,13,206,0" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold"/>
+        <Label Content="Birth Day" x:Name="lblBirthDay" HorizontalAlignment="Left" Margin="32,185,0,0" VerticalAlignment="Top" FontSize="16" Width="157" HorizontalContentAlignment="Right"/>
+        <DatePicker x:Name="datePicker" TabIndex="3"  SelectedDateFormat="Short"  Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Margin="204,190,0,0" >
+            <DatePicker.SelectedDate>
+                <Binding Path="BirthDay" NotifyOnValidationError="True">
+                    <Binding.ValidationRules>
+                        <local2:MaxDateValue ErrorMessage="Birth day can not be higher than today"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </DatePicker.SelectedDate>
+        </DatePicker>
+
+        <Label Content="Weight (kg)" x:Name="lblWeight" HorizontalAlignment="Left" Margin="54,225,0,0" VerticalAlignment="Top" FontSize="16" Width="135" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="txtWeight" TabIndex="4"  Margin="204,225,184,0" Height="30" VerticalAlignment="Top" FontSize="16">
+            <TextBox.Text>
+                <Binding Path="Weight" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please enter the weight of your pet"/>
+                        <local2:RangeValidation ErrorMessage="Pet's weight should be higher than 0kg and lower than 2000kg" Min="0" Max="2000"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label Content="Specie" x:Name="lblSpecie" HorizontalAlignment="Left" Margin="64,141,0,0" VerticalAlignment="Top" FontSize="16" Width="125" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="cbxSpecie" TabIndex="2"  Margin="204,142,24,0" Height="30" VerticalAlignment="Top" FontSize="16">
+            <ComboBox.SelectedItem>
+                <Binding Path="Specie" NotifyOnValidationError="True" >
+                    <Binding.ValidationRules>
+                        <local2:RequiredValue ErrorMessage="Please select the specie"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
+    </Grid>
+</UserControl>

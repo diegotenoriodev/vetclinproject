@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VeterinarianClinicDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Species>
+    <Specie>
+      <Id>1</Id>
+      <Name>Dog</Name>
+    </Specie>
+    <Specie>
+      <Id>2</Id>
+      <Name>Cat</Name>
+    </Specie>
+    <Specie>
+      <Id>3</Id>
+      <Name>Fish</Name>
+    </Specie>
+    <Specie>
+      <Id>4</Id>
+      <Name>Horse</Name>
+    </Specie>
+  </Species>
+  <Addresses>
+    <Address>
+      <Id>-1</Id>
+      <Line1>Clinic - 100 Fairway</Line1>
+      <Apartment>23</Apartment>
+      <City>Kitchener</City>
+      <Province>ON</Province>
+      <PostalCode>N2C 1X4</PostalCode>
+      <IdClient>0</IdClient>
+    </Address>
+    <Address>
+      <Id>3</Id>
+      <Line1>Mogan Ave. N 55</Line1>
+      <Apartment>02</Apartment>
+      <City>Kitchener</City>
+      <Province>ON</Province>
+      <PostalCode>N1A 9K9</PostalCode>
+      <IdClient>1</IdClient>
+    </Address>
+    <Address>
+      <Id>1</Id>
+      <Line1>King Street E. 594</Line1>
+      <Apartment>902</Apartment>
+      <City>Kitchener</City>
+      <Province>ON</Province>
+      <PostalCode>K9J 9K1</PostalCode>
+      <IdClient>1</IdClient>
+    </Address>
+    <Address>
+      <Id>2</Id>
+      <Line1>Fairway Rd, 10</Line1>
+      <Apartment>909</Apartment>
+      <City>Kitchener</City>
+      <Province>ON</Province>
+      <PostalCode>K1J 9L9</PostalCode>
+      <IdClient>2</IdClient>
+    </Address>
+    <Address>
+      <Id>3</Id>
+      <Line1>Morgan Ave. N 55</Line1>
+      <Apartment>02</Apartment>
+      <City>Kitchener</City>
+      <Province>ON</Province>
+      <PostalCode>N1A 9K9</PostalCode>
+      <IdClient>1</IdClient>
+    </Address>
+  </Addresses>
+  <UserTypes>
+    <UserType>
+      <Id>1</Id>
+      <Name>Admin</Name>
+    </UserType>
+    <UserType>
+      <Id>2</Id>
+      <Name>Staff</Name>
+    </UserType>
+  </UserTypes>
+  <Users>
+    <User>
+      <Id>1</Id>
+      <Name>Admin</Name>
+      <Username>Admin</Username>
+      <Password>svkLRj9nYEgZo7gWDJD5IQ==</Password>
+      <IdUserType>1</IdUserType>
+    </User>
+    <User>
+      <Id>2</Id>
+      <Name>Diego Tenorio</Name>
+      <Username>diegotenorio3</Username>
+      <Password>fc0iUkg331qk3V8HY6MWvQ==</Password>
+      <IdUserType>1</IdUserType>
+    </User>
+    <User>
+      <Id>3</Id>
+      <Name>teste</Name>
+      <Username>teste</Username>
+      <Password>Ao5ZnFYo344iWqv/Jr9euw==</Password>
+      <IdUserType>2</IdUserType>
+    </User>
+  </Users>
+  <Pets>
+    <Pet>
+      <Id>1</Id>
+      <IdSpecie>1</IdSpecie>
+      <Name>Cerberus</Name>
+      <BirthDay>2017-06-26T00:00:00</BirthDay>
+      <Weight>65</Weight>
+      <IdOwner>1</IdOwner>
+    </Pet>
+    <Pet>
+      <Id>2</Id>
+      <IdSpecie>2</IdSpecie>
+      <Name>Penelope</Name>
+      <BirthDay>2010-07-03T00:00:00</BirthDay>
+      <Weight>15</Weight>
+      <IdOwner>1</IdOwner>
+    </Pet>
+    <Pet>
+      <Id>3</Id>
+      <IdSpecie>2</IdSpecie>
+      <Name>Mini</Name>
+      <BirthDay>2017-08-08T00:00:00</BirthDay>
+      <Weight>8</Weight>
+      <IdOwner>2</IdOwner>
+    </Pet>
+    <Pet>
+      <Id>4</Id>
+      <IdSpecie>3</IdSpecie>
+      <Name>Mimimimi</Name>
+      <BirthDay>2017-11-24T00:00:00</BirthDay>
+      <Weight>1</Weight>
+      <IdOwner>2</IdOwner>
+    </Pet>
+  </Pets>
+  <Clients>
+    <Client>
+      <Id>1</Id>
+      <Name>Diego Tenorio</Name>
+      <PhoneNumber>(226)989 4525</PhoneNumber>
+      <SIN>123-123-123</SIN>
+    </Client>
+    <Client>
+      <Id>2</Id>
+      <Name>Ayushi Dave</Name>
+      <PhoneNumber>9300209301</PhoneNumber>
+      <SIN>032-321-332</SIN>
+    </Client>
+  </Clients>
+  <Appointments>
+    <Appointment>
+      <Id>1</Id>
+      <DateTimeOfAppointment>2018-01-06T11:00:00</DateTimeOfAppointment>
+      <IdPet>1</IdPet>
+      <IdDoctor>1</IdDoctor>
+      <IdAddress>-1</IdAddress>
+      <IdAppointmentType>1</IdAppointmentType>
+      <Client>
+        <Id>1</Id>
+        <Name>Diego Tenorio</Name>
+        <PhoneNumber>(226)989 4525</PhoneNumber>
+        <SIN>123-123-123</SIN>
+      </Client>
+    </Appointment>
+    <Appointment>
+      <Id>2</Id>
+      <DateTimeOfAppointment>2018-01-07T17:00:00</DateTimeOfAppointment>
+      <IdPet>3</IdPet>
+      <IdDoctor>1</IdDoctor>
+      <IdAddress>2</IdAddress>
+      <IdAppointmentType>2</IdAppointmentType>
+      <Client>
+        <Id>2</Id>
+        <Name>Ayushi Dave</Name>
+        <PhoneNumber>9300209301</PhoneNumber>
+        <SIN>032-321-332</SIN>
+      </Client>
+    </Appointment>
+    <Appointment>
+      <Id>3</Id>
+      <DateTimeOfAppointment>2018-01-06T12:00:00-05:00</DateTimeOfAppointment>
+      <IdPet>1</IdPet>
+      <IdDoctor>2</IdDoctor>
+      <IdAddress>3</IdAddress>
+      <IdAppointmentType>1</IdAppointmentType>
+      <Client>
+        <Id>1</Id>
+        <Name>Diego Tenorio</Name>
+        <PhoneNumber>(226)989 4525</PhoneNumber>
+        <SIN>123-123-123</SIN>
+      </Client>
+    </Appointment>
+  </Appointments>
+  <AppointmentTypes>
+    <AppointmentType>
+      <Id>1</Id>
+      <Name>Vaccine</Name>
+    </AppointmentType>
+    <AppointmentType>
+      <Id>2</Id>
+      <Name>Surgery</Name>
+    </AppointmentType>
+    <AppointmentType>
+      <Id>1</Id>
+      <Name>Therapeutic</Name>
+    </AppointmentType>
+  </AppointmentTypes>
+  <Doctors>
+    <Doctor>
+      <Id>1</Id>
+      <Name>Dr. Raissa Fujoka</Name>
+      <Email>rfujokadr@gmail.com</Email>
+      <PhoneNumber>(893) 123 1231</PhoneNumber>
+    </Doctor>
+    <Doctor>
+      <Id>2</Id>
+      <Name>Dr. Ross</Name>
+      <Email>d.rross@gmail.com</Email>
+      <PhoneNumber>(666) 123 1232</PhoneNumber>
+    </Doctor>
+  </Doctors>
+</VeterinarianClinicDB>

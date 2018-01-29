@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="VeterinarianClinic.View.Views.ClientGridViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VeterinarianClinic.View.Views"
+             xmlns:UserControls="clr-namespace:VeterinarianClinic.View.UserControls" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <UserControls:Top x:Name="top" Grid.Row="0" Title="Clients"
+            NewToolTip="Click here to add a new client"
+            SearchToolTip="Search by name and phone number" Height="154" 
+            VerticalAlignment="Top" />
+        <UserControls:BasicGrid x:Name="clientGrid" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="Id" HeaderStringFormat="Id" IsReadOnly="True" SortDirection="Ascending" SortMemberPath="Id" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Name}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="Name" HeaderStringFormat="Company" IsReadOnly="True" SortDirection="Ascending" SortMemberPath="Name" Width="300"/>
+                <DataGridTextColumn Binding="{Binding PhoneNumber}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="Phone Number" IsReadOnly="True" SortDirection="Ascending" SortMemberPath="PhoneNumber" Width="200"/>
+                <DataGridTextColumn Binding="{Binding SIN}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="SIN" IsReadOnly="True" SortDirection="Ascending" SortMemberPath="SIN" Width="200"/>
+            </DataGrid.Columns>
+        </UserControls:BasicGrid>
+        <local:ClientEditor  Visibility="Hidden" x:Name="clientEditor" Width="450" Margin="176,47,174,100" Grid.RowSpan="2" />
+    </Grid>
+</UserControl>
